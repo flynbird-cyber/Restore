@@ -36,9 +36,12 @@ Restore loads saved PNG images and their embedded generation information directl
 1. Open AUTOMATIC1111 WebUI.
 2. Select the **Extensions** tab.
 3. Select **Install from URL**.
-4. Enter the URL of this GitHub repository.
+4. Enter `https://github.com/flynbird-cyber/Restore.git` in **URL for extension's git repository**. Leave the other fields blank.
 5. Click **Install**.
-6. Restart the WebUI.
+6. After installation is complete, select the **Installed** tab.
+7. Verify that Restore is installed and its checkbox is enabled.
+8. Click **Apply and restart UI**. The WebUI restarts automatically.
+9. Open the **txt2img** tab and check that **Restore saved txt2img gallery (PNG)** is available.
 
 ## 4. Usage
 
