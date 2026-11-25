@@ -36,9 +36,12 @@ Restore는 저장된 PNG 이미지와 내장 생성정보를 기존 txt2img 출�
 1. AUTOMATIC1111 WebUI 실행.
 2. **Extensions** 탭 선택.
 3. **Install from URL** 선택.
-4. 이 GitHub 저장소의 URL 입력.
+4. **URL for extension's git repository** 입력란에 `https://github.com/flynbird-cyber/Restore.git` 입력. 나머지 입력란은 공란으로 유지.
 5. **Install** 버튼 클릭.
-6. WebUI 재시작.
+6. 설치 완료 후 **Installed** 탭 선택.
+7. Restore가 설치되어 있고 활성화 체크박스가 선택되어 있는지 확인.
+8. **Apply and restart UI** 버튼 클릭. WebUI가 자동으로 재시작됨.
+9. **txt2img** 탭에서 **Restore saved txt2img gallery (PNG)** 메뉴 확인.
 
 ## 4. 사용법
 
