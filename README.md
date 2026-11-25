@@ -1,5 +1,7 @@
 # Restore
 
+English | [한국어](README_KO.md)
+
 **I need stars to develop better extensions. Please give this repository a star.**
 
 If you give it a star, the god of restoration will protect your system. On the other hand, if you don't, your system may be less likely to be restored.
