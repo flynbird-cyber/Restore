@@ -8,6 +8,8 @@ If you give it a star, the god of restoration will protect your system. On the o
 
 Of course, I'm joking. Don't forget to give this repository a star.
 
+**Watch the demonstration video below.**
+
 ---
 
 A txt2img gallery restoration extension for AUTOMATIC1111 Stable Diffusion WebUI.
