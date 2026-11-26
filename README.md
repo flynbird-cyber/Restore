@@ -12,6 +12,12 @@ Of course, I'm joking. Don't forget to give this repository a star.
 
 A txt2img gallery restoration extension for AUTOMATIC1111 Stable Diffusion WebUI.
 
+## Demo
+
+Restore 100 saved PNG images, select an image, and continue processing with Hires. fix and ADetailer.
+
+https://github.com/user-attachments/assets/8f29bc15-23d5-4b40-ad38-addeec152114
+
 ## 1. Purpose
 
 The txt2img output gallery may be cleared after a WebUI restart, browser closure, or error.
