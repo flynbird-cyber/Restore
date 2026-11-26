@@ -8,6 +8,8 @@
 
 물론 농담입니다. 잊지 말고 꼭 별을 주세요.
 
+**아래 시연 영상을 확인하십시오.**
+
 ---
 
 AUTOMATIC1111 Stable Diffusion WebUI용 txt2img 갤러리 복원 확장 프로그램입니다.
