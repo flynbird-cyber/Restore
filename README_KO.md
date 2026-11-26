@@ -12,6 +12,12 @@
 
 AUTOMATIC1111 Stable Diffusion WebUI용 txt2img 갤러리 복원 확장 프로그램입니다.
 
+## 시연 영상 (Demo)
+
+저장된 PNG 이미지 100장을 복원하고, 이미지를 선택하여 Hires. fix 및 ADetailer로 후속 작업을 진행합니다.
+
+https://github.com/user-attachments/assets/8f29bc15-23d5-4b40-ad38-addeec152114
+
 ## 1. 개발 목적
 
 WebUI 재시작, 브라우저 종료 또는 오류 발생 시 txt2img 출력 갤러리가 초기화될 수 있습니다.
