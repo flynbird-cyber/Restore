@@ -2,7 +2,7 @@
 
 English | [한국어](README_KO.md)
 
-![README views](https://visitor-badge.laobi.icu/badge?page_id=flynbird-cyber.Restore&left_text=README%20views)
+![README views](https://visitor-badge.laobi.icu/badge?page_id=flynbird-cyber.Restore&left_text=README%20views) [![Release downloads](https://img.shields.io/github/downloads/flynbird-cyber/Restore/total?label=Release%20downloads)](https://github.com/flynbird-cyber/Restore/releases)
 
 **I need stars to develop better extensions. Please give this repository a star.**
 
