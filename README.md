@@ -2,7 +2,7 @@
 
 English | [한국어](README_KO.md)
 
-![README views](https://visitor-badge.laobi.icu/badge?page_id=flynbird-cyber.Restore&left_text=README%20views)
+![README views](https://visitor-badge.laobi.icu/badge?page_id=flynbird-cyber.Restore&left_text=README%20views) [![Git clones](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fflynbird-cyber%2FRestore%2Fmain%2F.github%2Ftraffic%2Fclones.json&query=%24.message&label=Git%20clones&color=blue)](https://github.com/flynbird-cyber/Restore/blob/main/.github/traffic/clones.json)
 
 **I need stars to develop better extensions. Please give this repository a star.**
 
