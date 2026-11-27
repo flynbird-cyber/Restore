@@ -1,0 +1,70 @@
+name: Clone counter
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 * * * *'
+permissions:
+  contents: write
+concurrency:
+  group: clone-counter
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read official clone statistics and preserve daily counts
+        env:
+          TRAFFIC_TOKEN: ${{ secrets.RESTORE_TRAFFIC_TOKEN }}
+          WRITE_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          python3 - <<'PY'
+          import os, json, base64, urllib.request, urllib.error
+          token = os.environ.get("TRAFFIC_TOKEN")
+          if not token:
+              raise SystemExit("Add the RESTORE_TRAFFIC_TOKEN repository secret before running.")
+          root = "https://api.github.com/repos/" + os.environ["REPO"]
+          def request(path, key, body=None):
+              req = urllib.request.Request(root + path,
+                  data=None if body is None else json.dumps(body).encode(),
+                  headers={"Authorization": "Bearer " + key,
+                           "Accept": "application/vnd.github+json",
+                           "X-GitHub-Api-Version": "2022-11-28"},
+                  method="GET" if body is None else "PUT")
+              with urllib.request.urlopen(req, timeout=30) as res:
+                  return json.load(res)
+          data = request("/traffic/clones", token)
+          if not isinstance(data.get("clones"), list) or not data["clones"]:
+              raise SystemExit("No daily traffic data returned; previous counts preserved.")
+          path = "/contents/.github/traffic/clones.json"
+          key = os.environ["WRITE_TOKEN"]
+          branch = os.environ["BRANCH"]
+          sha = None
+          days = {}
+          try:
+              previous = request(path + "?ref=" + branch, key)
+              sha = previous["sha"]
+              old = json.loads(base64.b64decode(previous["content"]))
+              days = old.get("days", {})
+          except urllib.error.HTTPError as err:
+              if err.code != 404:
+                  raise
+          for item in data["clones"]:
+              days[item["timestamp"][:10]] = int(item["count"])
+          total = sum(days.values())
+          current = {"schemaVersion": 1, "label": "Git clones",
+                     "message": str(total), "color": "blue",
+                     "days": dict(sorted(days.items()))}
+          raw = json.dumps(current, indent=2) + "\n"
+          if sha and old == current:
+              print("No change in official clone statistics.")
+              raise SystemExit(0)
+          body = {"message": "Update recorded Git clone count",
+                  "branch": branch,
+                  "content": base64.b64encode(raw.encode()).decode()}
+          if sha:
+              body["sha"] = sha
+          request(path, key, body)
+          print("Recorded clone count:", total)
+          PY
